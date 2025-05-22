@@ -4,7 +4,6 @@
   <title>Untitled Site</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Google Sites loads tons of internal scripts/styles here -->
   <style>
     /* Minimal reset and layout */
     body, html {
@@ -18,18 +17,21 @@
       min-height: 100vh;
       background: #fff;
     }
+    iframe {
+      width: 100%;
+      height: 80vh; /* adjust as needed */
+      border: none;
+    }
   </style>
 </head>
 <body>
   <div id="site-content">
-    <!-- New site starts essentially blank -->
-    <h1>Welcome to your new site</h1>
-    <p>Click the edit button to start customizing your site.</p>
+ 
+    <iframe 
+      src="https://sites.google.com/ecsd.us/arstudios/home" 
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
   </div>
-
-  <script>
-    // Google Sites loads complex JS for editing and publishing here,
-    // which is proprietary and unavailable publicly.
-  </script>
 </body>
 </html>
