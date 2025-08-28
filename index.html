@@ -11,139 +11,73 @@
     body { font-family: 'Open Sans', sans-serif; background-color: #121212; color: #f0f0f0; line-height: 1.6; scroll-behavior: smooth; }
     a { text-decoration: none; color: inherit; }
 
-    /* Smooth section fade-in animation */
-    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
-    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    /* Navigation Bar */
+    nav {
+      position: fixed; top:0; left:0; width:100%; background:#1f1f1f; display:flex; justify-content:center; z-index:1001;
+      padding:10px 0; box-shadow:0 2px 10px rgba(0,0,0,0.7);
+    }
+    nav a { margin:0 20px; font-weight:bold; color:#00aaff; transition:0.3s; }
+    nav a:hover { color:#0088cc; }
 
-    /* Header / Hero */
+    /* Fade-in animation */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 1s ease; }
+
+    /* Header */
     header {
       height: 90vh;
       background: linear-gradient(rgba(0,0,50,0.7), rgba(0,0,50,0.7)), url('hero-image.jpg') no-repeat center center/cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+      display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+      margin-top:50px;
     }
-    header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #00aaff;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    .cta-btn {
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      font-weight: bold;
-      color: #121212;
-      background-color: #00aaff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .cta-btn:hover {
-      background-color: #0088cc;
-      transform: translateY(-3px);
-    }
+    header h1 { font-family:'Montserrat',sans-serif; font-size:3rem; color:#00aaff; text-shadow:0 2px 6px rgba(0,0,0,0.7); margin-bottom:1rem; }
+    header p { font-size:1.2rem; margin-bottom:2rem; }
+    .cta-btn { padding:1rem 2rem; font-weight:bold; color:#121212; background:#00aaff; border:none; border-radius:8px; cursor:pointer; transition:all 0.3s ease; }
+    .cta-btn:hover { background:#0088cc; transform:translateY(-3px); }
 
     /* Sections */
-    section {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #00aaff;
-      text-align: center;
-    }
-    p { text-align: center; max-width: 800px; margin: 0 auto 2rem auto; }
+    section { padding:80px 20px; max-width:1200px; margin:0 auto; }
+    h2 { font-family:'Montserrat',sans-serif; font-size:2rem; margin-bottom:1rem; color:#00aaff; text-align:center; }
+    p { text-align:center; max-width:800px; margin:0 auto 2rem auto; }
 
     /* Grid cards */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
-    .feature-card {
-      background-color: #1f1f1f;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .feature-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 20px rgba(0,170,255,0.5);
-    }
-    .feature-card h3 { color: #00aaff; }
+    .features { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; margin-top:40px; }
+    .feature-card { background:#1f1f1f; padding:20px; border-radius:10px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.5); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .feature-card:hover { transform:translateY(-5px); box-shadow:0 5px 20px rgba(0,170,255,0.5); }
+    .feature-card h3 { color:#00aaff; }
 
     /* Buttons */
-    .report-btn {
-      display: inline-block;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
-      margin-top: 10px;
-      background-color: #0088cc;
-      color: #fff;
-    }
-    .report-btn:hover { background-color: #00aaff; transform: translateY(-2px); }
+    .report-btn { display:inline-block; padding:0.8rem 1.5rem; border-radius:8px; font-weight:bold; text-decoration:none; background:#0088cc; color:#fff; margin-top:10px; transition:0.3s; }
+    .report-btn:hover { background:#00aaff; transform:translateY(-2px); }
 
     /* Floating Feedback Button */
-    .floating-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #00aaff;
-      color: #121212;
-      padding: 12px 20px;
-      border-radius: 50px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-      z-index: 1000;
-      transition: all 0.3s ease;
-    }
-    .floating-btn:hover { background-color: #0088cc; transform: translateY(-2px); }
+    .floating-btn { position:fixed; bottom:20px; right:20px; background:#00aaff; color:#121212; padding:12px 20px; border-radius:50px; font-weight:bold; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.6); z-index:1000; transition:all 0.3s ease; }
+    .floating-btn:hover { background:#0088cc; transform:translateY(-2px); }
 
     /* Footer */
-    footer {
-      background-color: #1f1f1f;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-    footer a { color: #00aaff; font-weight: bold; }
+    footer { background:#1f1f1f; text-align:center; padding:20px; margin-top:40px; font-size:0.9rem; color:#aaa; }
+    footer a { color:#00aaff; font-weight:bold; }
 
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      header h1 { font-size: 2.2rem; }
-      header p { font-size: 1rem; }
-    }
+    /* Responsive */
+    @media(max-width:600px){ header h1{font-size:2.2rem;} header p{font-size:1rem;} nav a{margin:0 10px;} }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <header class="fade-in">
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#lost-and-found">Game</a>
+    <a href="#news">News</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero / Home -->
+  <header id="home" class="fade-in">
     <h1>AR Studios</h1>
     <p>Where imagination meets reality: Creating games since 2023.</p>
-    <button class="cta-btn">Buy Lost and Found</button>
+    <a href="#lost-and-found" class="cta-btn">Discover Lost and Found</a>
   </header>
 
   <!-- About Section -->
@@ -170,25 +104,26 @@
         <p>Fishing, farming, hunting, crafting, and base-building.</p>
       </div>
     </div>
-    <div style="text-align:center; margin-top:20px;">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeLs1HkNZ0cAxcSSKGds3zRPvkvt0pefGHaFwVHGbCcvMB7eg/viewform?usp=header" target="_blank" class="report-btn">Report Bugs / Suggest Features</a>
-    </div>
   </section>
 
-  <!-- News and Updates Section -->
+  <!-- News Section -->
   <section id="news" class="fade-in">
     <h2>News & Updates</h2>
-    <p>Stay tuned for the latest announcements, updates, and behind-the-scenes insights from AR Studios.</p>
+    <p>Check out the latest announcements, updates, and development logs from AR Studios.</p>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="fade-in">
+    <h2>Media & Gallery</h2>
+    <p>Concept art, screenshots, and trailers from Lost and Found.</p>
   </section>
 
   <!-- Contact Section -->
   <section id="contact" class="fade-in">
     <h2>Contact</h2>
     <p>Reach out to us for questions or feedback!</p>
-    <p>Email: <a href="mailto:arstudios@gmail.com">arstudios@gmail.com</a></p>
-    <div style="text-align:center; margin-top:20px;">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeLs1HkNZ0cAxcSSKGds3zRPvkvt0pefGHaFwVHGbCcvMB7eg/viewform?usp=header" target="_blank" class="report-btn">Report Bugs / Suggest Features</a>
-    </div>
+    <p>Email: <a href="mailto:arstudios@example.com">arstudios@example.com</a></p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeLs1HkNZ0cAxcSSKGds3zRPvkvt0pefGHaFwVHGbCcvMB7eg/viewform?usp=header" target="_blank" class="report-btn">Report Bugs / Suggest Features</a>
   </section>
 
   <!-- Floating Feedback Button -->
@@ -196,11 +131,10 @@
 
   <!-- Footer -->
   <footer>
-    &copy; 2025 AR Studios. All rights reserved. | 
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeLs1HkNZ0cAxcSSKGds3zRPvkvt0pefGHaFwVHGbCcvMB7eg/viewform?usp=header" target="_blank">Report Bugs / Suggest Features</a>
+    &copy; 2025 AR Studios. All rights reserved. | <a href="#contact">Contact / Feedback</a>
   </footer>
 
-  <!-- Scroll Fade-In JS -->
+  <!-- JS for fade-in -->
   <script>
     const faders = document.querySelectorAll('.fade-in');
     const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
