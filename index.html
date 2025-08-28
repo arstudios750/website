@@ -7,33 +7,179 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     /* Global Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #121212;
-      color: #fff;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Open Sans', sans-serif; background-color: #f9f9f9; color: #121212; line-height: 1.6; scroll-behavior: smooth; }
+    a { text-decoration: none; color: inherit; }
 
     /* Header / Hero */
     header {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-image.jpg') no-repeat center center/cover;
+      height: 90vh;
+      background: linear-gradient(rgba(0,0,50,0.6), rgba(0,0,50,0.6)), url('hero-image.jpg') no-repeat center center/cover;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
     }
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #0077cc; /* blue accent */
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .cta-btn {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+      background-color: #0077cc;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .cta-btn:hover {
+      background-color: #005fa3;
+      transform: translateY(-3px);
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #0077cc;
+      text-align: center;
+    }
+    p { text-align: center; max-width: 800px; margin: 0 auto 2rem auto; }
+
+    /* Feature Cards */
+    .features, .prints { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
+    .feature-card, .print-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature-card:hover, .print-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,119,204,0.3);
+    }
+    .print-card img { max-width: 100%; border-radius: 8px; margin-bottom: 10px; }
+
+    /* Buttons in section */
+    .buy-btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: #0077cc;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+    .buy-btn:hover {
+      background-color: #005fa3;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>AR Studios</h1>
+    <p>Story-Driven Survival. Endless Creativity.</p>
+    <button class="cta-btn">Buy Lost and Found</button>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About AR Studios</h2>
+    <p>We are an independent game studio creating immersive story-driven games and unique experiences. Our goal is to bring players into unforgettable worlds where creativity and survival go hand in hand.</p>
+  </section>
+
+  <!-- Lost and Found Section -->
+  <section id="game">
+    <h2>Lost and Found</h2>
+    <p>Survive on mysterious islands, repair radios, rescue a pilot, and unlock sandbox mode for endless creativity.</p>
+    <div class="features">
+      <div class="feature-card">
+        <h3>Story Mode</h3>
+        <p>Immersive narrative-driven survival across two islands.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Sandbox Mode</h3>
+        <p>Unlocked after story completion for infinite replayability.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Survival Mechanics</h3>
+        <p>Fishing, farming, hunting, crafting, and base-building.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D Prints Section -->
+  <section id="prints">
+    <h2>3D Prints & Merchandise</h2>
+    <p>Bring the Lost and Found islands to life with collectible 3D prints and merchandise.</p>
+    <div class="prints">
+      <div class="print-card">
+        <img src="small-island.jpg" alt="Small Island Print">
+        <h4>Small Island</h4>
+        <p>$3–$5</p>
+        <a href="#" class="buy-btn">Order Now</a>
+      </div>
+      <div class="print-card">
+        <img src="medium-island.jpg" alt="Medium Island Print">
+        <h4>Medium Island</h4>
+        <p>$6–$10</p>
+        <a href="#" class="buy-btn">Order Now</a>
+      </div>
+      <div class="print-card">
+        <img src="large-island.jpg" alt="Large Island Print">
+        <h4>Large Island</h4>
+        <p>$10–$15</p>
+        <a href="#" class="buy-btn">Order Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Reach out to us for questions, custom orders, or feedback!</p>
+    <p>Email: <a href="mailto:arstudios@example.com">arstudios@example.com</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 AR Studios. All rights reserved.
+  </footer>
+
+</body>
+</html>
     header h1 {
       font-family: 'Montserrat', sans-serif;
       font-size: 3rem;
